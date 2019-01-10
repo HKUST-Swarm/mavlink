@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<mavlink>
+  <!-- MAVLink standard messages -->
+  <include>common.xml</include>
+  <dialect>0</dialect>
+  <!-- use common.xml enums -->
+  <enums/>
+  <!-- use common.xml messages -->
+  <messages>
+    <message id="400" name="SWARM_INFO">
+      <field type="uint8_t" name="odom_vaild">If odometry is vaild</field>
+      <field type="float" name="x" units="m">X Position</field>
+      <field type="float" name="y" units="m">Y Position</field>
+      <field type="float" name="z" units="m">Z Position</field>
+      <field type="float" name="q0" units="m">q0</field>
+      <field type="float" name="q1" units="m">q1</field>
+      <field type="float" name="q2" units="m">q2</field>
+      <field type="float" name="q3" units="m">q3</field>
+      <field type="float" name="vx" units="m/s">X linear speed</field>
+      <field type="float" name="vy" units="m/s">Y linear speed</field>
+      <field type="float" name="vz" units="m/s">Z linear speed</field>
+      <field type="float[10]" name="remote_distance" units="m">Distance to Remote Drone</field>
+    </message>
+  </messages>
+</mavlink>
