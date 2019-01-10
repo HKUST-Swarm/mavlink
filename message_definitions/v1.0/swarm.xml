@@ -21,5 +21,13 @@
       <field type="float" name="vz" units="m/s">Z linear speed</field>
       <field type="float[10]" name="remote_distance" units="m">Distance to Remote Drone</field>
     </message>
+    <message id="401" name="SWARM_RELATIVE_FUSED">
+      <field type="uint8_t" name="source_id">Source ID of drone</field>
+      <field type="uint8_t" name="target_id">Target ID of drone</field>
+      <field type="float" name="rel_x" units="m">Relative X Position</field>
+      <field type="float" name="rel_y" units="m">Relative Y Position</field>
+      <field type="float" name="rel_z" units="m">Relative Z Position</field>
+      <field type="float" name="rel_yaw_offset" units="deg">Relative Yaw coorinate offset</field>
+    </message>
   </messages>
 </mavlink>
