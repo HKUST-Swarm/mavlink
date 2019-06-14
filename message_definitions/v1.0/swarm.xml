@@ -7,27 +7,76 @@
   <enums/>
   <!-- use common.xml messages -->
   <messages>
-    <message id="400" name="SWARM_INFO">
+    <message id="400" name="NODE_REALTIME_INFO">
+      <field type="int32_t" name="lps_time" units="ms">LPS_TIME</field> 
       <field type="uint8_t" name="odom_vaild">If odometry is vaild</field>
+      <field type="int16_t" name="x" units="mm">X Position</field>
+      <field type="int16_t" name="y" units="mm">Y Position</field>
+      <field type="int16_t" name="z" units="mm">Z Position</field>
+      <field type="int16_t" name="yaw" units="rad">Yaw angle rad*1000</field>
+      <field type="int16[5]" name="remote_distance" units="m">Distance to Remote Drone*1000</field>
+    </message>
+
+    <message id="401" name="NODE_RELATIVE_FUSED">
+      <field type="int32_t" name="lps_time" units="ms">LPS_TIME</field> 
+      <field type="uint8_t" name="target_id">Target ID of drone</field>
+      <field type="int16_t" name="rel_x" units="m">Relative X Position*1000</field>
+      <field type="int16_t" name="rel_y" units="m">Relative Y Position*1000</field>
+      <field type="int16_t" name="rel_z" units="m">Relative Z Position*1000</field>
+      <field type="int16_t" name="rel_yaw_offset" units="rad">Relative Yaw coorinate offset *1000</field>
+    </message>
+
+    <message id="402" name="SWARM_REMOTE_COMMAND">
+      <field type="int32_t" name="lps_time" units="ms">LPS_TIME</field> 
+      <field type="int8_t" name="target_id">Target ID of drone</field>
+      <field type="uint8_t" name="command_type" units="m">Onboard command type</field>
+      <field type="int32_t" name="param1" units="m">param1</field>
+      <field type="int32_t" name="param2" units="m">param2</field>
+      <field type="int32_t" name="param3" units="m">param3</field>
+      <field type="int32_t" name="param4" units="m">param4</field>
+      <field type="int32_t" name="param5" units="m">param5</field>
+      <field type="int32_t" name="param6" units="m">param6</field>
+      <field type="int32_t" name="param7" units="m">param7</field>
+      <field type="int32_t" name="param8" units="m">param8</field>
+      <field type="int32_t" name="param9" units="m">param9</field>
+      <field type="int32_t" name="param10" units="m">param10</field>
+    </message>
+    <message id="403" name="NODE_DETECTED">
+      <field type="int32_t" name="lps_time" units="ms">LPS_TIME</field> 
+      <field type="int8_t" name="target_id">Target ID of drone</field>
+      <field type="int16_t" name="x" units="m">Relative X Position*1000</field>
+      <field type="int16_t" name="y" units="m">Relative Y Position*1000</field>
+      <field type="int16_t" name="z" units="m">Relative Z Position*1000</field>
+      <field type="int16_t" name="yaw" units="rad">Yaw angle rad*1000</field>
+
+    </message>
+    <message id="404" name="DRONE_STATUS">
+      <field type="int32_t" name="lps_time" units="ms">LPS_TIME</field> 
+      <field type="uint8_t" name="flight_status">Flight status of drone</field>
+      <field type="uint8_t" name="control_auth">Control AUTH of drone</field>
+      <field type="uint8_t" name="commander_mode">COMMANDER MODE</field>
+      <field type="uint8_t" name="rc_valid">RC VAILD</field>
+      <field type="uint8_t" name="onboard_cmd_valid">ONBOARD CMD VALID</field>
+      <field type="uint8_t" name="sdk_valid">SDK VALID</field>
+      <field type="uint8_t" name="vo_valid"> VOO VALID</field>
+      <field type="float" name="bat_vol">BATTERY_VOL</field>
       <field type="float" name="x" units="m">X Position</field>
       <field type="float" name="y" units="m">Y Position</field>
       <field type="float" name="z" units="m">Z Position</field>
-      <field type="float" name="q0" units="m">q0</field>
-      <field type="float" name="q1" units="m">q1</field>
-      <field type="float" name="q2" units="m">q2</field>
-      <field type="float" name="q3" units="m">q3</field>
-      <field type="float" name="vx" units="m/s">X linear speed</field>
-      <field type="float" name="vy" units="m/s">Y linear speed</field>
-      <field type="float" name="vz" units="m/s">Z linear speed</field>
-      <field type="float[10]" name="remote_distance" units="m">Distance to Remote Drone</field>
     </message>
-    <message id="401" name="SWARM_RELATIVE_FUSED">
-      <field type="uint8_t" name="source_id">Source ID of drone</field>
-      <field type="uint8_t" name="target_id">Target ID of drone</field>
-      <field type="float" name="rel_x" units="m">Relative X Position</field>
-      <field type="float" name="rel_y" units="m">Relative Y Position</field>
-      <field type="float" name="rel_z" units="m">Relative Z Position</field>
-      <field type="float" name="rel_yaw_offset" units="deg">Relative Yaw coorinate offset</field>
+    <message id="405" name="DRONE_ODOM_GT">
+      <field type="int32_t" name="lps_time" units="ms">LPS_TIME</field> 
+      <field type="int8_t" name="source_id">Source ID of drone</field>
+      <field type="int16_t" name="x" units="m">X Position*1000</field>
+      <field type="int16_t" name="y" units="m">Y Position*1000</field>
+      <field type="int16_t" name="z" units="m">Z Position*1000</field>
+      <field type="int16_t" name="q0" units="m">QUAT W*10000</field>
+      <field type="int16_t" name="q1" units="m">QUAT X*10000</field>
+      <field type="int16_t" name="q2" units="m">QUAT Y*10000</field>
+      <field type="int16_t" name="q3" units="m">QUAT Z*10000</field>
+      <field type="int16_t" name="vx" units="m">Velocity_X*1000</field>
+      <field type="int16_t" name="vy" units="m">Velocity_Y*1000</field>
+      <field type="int16_t" name="vz" units="m">Velocity_Z*1000</field>
     </message>
   </messages>
 </mavlink>
