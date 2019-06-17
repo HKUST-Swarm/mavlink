@@ -10,11 +10,11 @@
     <message id="400" name="NODE_REALTIME_INFO">
       <field type="int32_t" name="lps_time" units="ms">LPS_TIME</field> 
       <field type="uint8_t" name="odom_vaild">If odometry is vaild</field>
-      <field type="int16_t" name="x" units="mm">X Position</field>
-      <field type="int16_t" name="y" units="mm">Y Position</field>
-      <field type="int16_t" name="z" units="mm">Z Position</field>
+      <field type="float" name="x" units="mm">X Position</field>
+      <field type="float" name="y" units="mm">Y Position</field>
+      <field type="float" name="z" units="mm">Z Position</field>
       <field type="int16_t" name="yaw" units="rad">Yaw angle rad*1000</field>
-      <field type="int16[5]" name="remote_distance" units="m">Distance to Remote Drone*1000</field>
+      <field type="uint16_t[10]" name="remote_distance" units="m">Distance to Remote Drone*1000</field>
     </message>
 
     <message id="401" name="NODE_RELATIVE_FUSED">
