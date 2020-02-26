@@ -53,10 +53,10 @@
     <message id="203" name="NODE_DETECTED">
       <field type="int32_t" name="lps_time" units="ms">LPS_TIME</field> 
       <field type="int8_t" name="target_id">Target ID of drone</field>
-      <field type="int16_t" name="x" units="m">Relative X Position*1000</field>
-      <field type="int16_t" name="y" units="m">Relative Y Position*1000</field>
-      <field type="int16_t" name="z" units="m">Relative Z Position*1000</field>
-      <field type="int16_t" name="yaw" units="rad">Yaw angle rad*1000</field>
+      <field type="int16_t" name="x" units="m">Relative X Position*10000</field>
+      <field type="int16_t" name="y" units="m">Relative Y Position*10000</field>
+      <field type="int16_t" name="z" units="m">Relative Z Position*10000</field>
+      <field type="uint16_t" name="inv_dep" units="1/m">inverse depth*10000;0 then unavailable</field>
     </message>
 
     <message id="204" name="DRONE_STATUS">
@@ -70,6 +70,7 @@
       <field type="uint8_t" name="sdk_valid">SDK VALID</field>
       <field type="uint8_t" name="vo_valid"> VOO VALID</field>
       <field type="float" name="bat_vol">BATTERY_VOL</field>
+      <field type="float" name="bat_remain" units="s">BATTERY_REMAIN</field>
       <field type="float" name="x" units="m">X Position</field>
       <field type="float" name="y" units="m">Y Position</field>
       <field type="float" name="z" units="m">Z Position</field>
@@ -127,14 +128,6 @@
       <field type="int16_t" name="cov_yaw" units="rad">Yaw Cov*1000</field>
     </message>
     
-    <message id="209" name="NODE_DETECTED_2D">
-      <field type="int32_t" name="lps_time" units="ms">LPS_TIME</field> 
-      <field type="int8_t" name="target_id">Target ID of drone</field>
-      <field type="int16_t" name="DY" units="m">Normalized DY</field>
-      <field type="int16_t" name="DZ" units="m">Normalized DZ</field>
-      <field type="int16_t" name="yaw" units="m">Detected Yaw</field>
-    </message>
-
   </messages>
 
 
