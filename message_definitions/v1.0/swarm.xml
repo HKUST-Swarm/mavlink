@@ -16,6 +16,8 @@
       <field type="int16_t" name="vx" units="cm/s">X velocity</field>
       <field type="int16_t" name="vy" units="cm/s">Y Velocity</field>
       <field type="int16_t" name="vz" units="cm/x">Z Velocity</field>
+      <field type="int16_t" name="roll" units="rad">rol angle rad*1000</field>
+      <field type="int16_t" name="pitch" units="rad">pitch angle rad*1000</field>
       <field type="int16_t" name="yaw" units="rad">Yaw angle rad*1000</field>
       <field type="uint16_t[10]" name="remote_distance" units="m">Distance to Remote Drone*1000</field>
     </message>
@@ -52,10 +54,11 @@
 
     <message id="203" name="NODE_DETECTED">
       <field type="int32_t" name="lps_time" units="ms">LPS_TIME</field> 
-      <field type="int8_t" name="target_id">Target ID of drone</field>
+      <field type="int32_t" name="target_id">Target ID of drone</field>
       <field type="int16_t" name="x" units="m">Relative X Position*10000</field>
       <field type="int16_t" name="y" units="m">Relative Y Position*10000</field>
       <field type="int16_t" name="z" units="m">Relative Z Position*10000</field>
+      <field type="int16_t" name="prob" units="1">Prob*10000</field>
       <field type="uint16_t" name="inv_dep" units="1/m">inverse depth*10000;0 then unavailable</field>
     </message>
 
