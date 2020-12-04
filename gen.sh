@@ -3,7 +3,7 @@ PROTOCOL_VER=1.0
 MAV_DEF=message_definitions/v1.0/swarm.xml
 SWARM_WS=/home/xuhao/swarm_ws/
 mavgen.py  --lang=C --wire-protocol=$PROTOCOL_VER --output=$SWARM_WS/src/swarm_pilot/include/mavlink $MAV_DEF --no-validate
-mavgen.py  --lang=C --wire-protocol=$PROTOCOL_VER --output=$SWARM_WS/src/swarm_localization/localization_proxy/include/mavlink $MAV_DEF--no-validate
+mavgen.py  --lang=C --wire-protocol=$PROTOCOL_VER --output=$SWARM_WS/src/swarm_localization/localization_proxy/include/mavlink $MAV_DEF --no-validate
 mavgen.py --lang=Python --wire-protocol=$PROTOCOL_VER --output=$SWARM_WS/src/swarm_station/scripts/pymavlink4swarm $MAV_DEF --no-validate
 mavgen.py --lang=Python --wire-protocol=$PROTOCOL_VER --output=$SWARM_WS/src/Fast-Swarm-Planner/fast_planner/plan_manage/scripts/pymavlink4swarm $MAV_DEF --no-validate
 #mavgen.py --lang=Python --wire-protocol=$PROTOCOL_VER --output=/home/xuhao/swarm_ws/src/swarm_pilot/scripts/pymavlink4swarm message_definitions/v1.0/swarm.xml --no-validate

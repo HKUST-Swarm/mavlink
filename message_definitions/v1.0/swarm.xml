@@ -60,6 +60,10 @@
       <field type="int16_t" name="z" units="m">Relative Z Position*10000</field>
       <field type="int16_t" name="prob" units="1">Prob*10000</field>
       <field type="uint16_t" name="inv_dep" units="1/m">inverse depth*10000;0 then unavailable</field>
+      <field type="float" name="x" units="m">X Position of Detetor</field>
+      <field type="float" name="y" units="m">Y Position of Detector</field>
+      <field type="float" name="z" units="m">Z Position of Detector</field>
+      <field type="float" name="yaw" units="deg">Yaw of Detector </field>
     </message>
 
     <message id="204" name="DRONE_STATUS">
