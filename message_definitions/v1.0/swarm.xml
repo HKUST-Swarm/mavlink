@@ -56,18 +56,14 @@
       <field type="int32_t" name="lps_time" units="ms">LPS_TIME</field> 
       <field type="int64_t" name="id">Message ID detection</field>
       <field type="int32_t" name="target_id">Target ID of drone</field>
-      <field type="float" name="x" units="m">Relative X Position</field>
-      <field type="float" name="y" units="m">Relative Y Position</field>
-      <field type="float" name="z" units="m">Relative Z Position</field>
-      <field type="int16_t" name="prob" units="1">Prob*10000</field>
-      <field type="uint16_t" name="inv_dep" units="1/m">inverse depth*10000;0 then unavailable</field>
-      <field type="float" name="cam_x" units="m">Cam extrinsic X Position</field>
-      <field type="float" name="cam_y" units="m">Cam extrinsic Y Position</field>
-      <field type="float" name="cam_z" units="m">Cam extrinsic Z Position</field>
-      <field type="float" name="local_pose_self_x" units="m">X Position of Detetor</field>
-      <field type="float" name="local_pose_self_y" units="m">Y Position of Detector</field>
-      <field type="float" name="local_pose_self_z" units="m">Z Position of Detector</field>
-      <field type="float" name="local_pose_self_yaw" units="deg">Yaw of Detector </field>
+      <field type="float" name="rel_x" units="m">Relative X Position</field>
+      <field type="float" name="rel_y" units="m">Relative Y Position</field>
+      <field type="float" name="rel_z" units="m">Relative Z Position</field>
+      <field type="float" name="rel_yaw" units="deg">Yaw of Detector </field>
+      <field type="float" name="cov_x" units="m">Covariance of Relative X Position</field>
+      <field type="float" name="cov_y" units="m">Covariance of Relative Y Position</field>
+      <field type="float" name="cov_z" units="m">Covariance of Relative Z Position</field>
+      <field type="float" name="cov_yaw" units="deg">Covariance of Yaw of Detector</field>
     </message>
 
     <message id="204" name="DRONE_STATUS">
